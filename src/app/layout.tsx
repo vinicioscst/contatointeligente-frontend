@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter, Abril_Fatface } from 'next/font/google'
+import { Volkhov } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-export const abrilFatface = Abril_Fatface({ subsets: ['latin'], weight: ['400'] })
+const volkhov = Volkhov({ subsets: ['latin'], weight: ['400', '700'] })
 
 const metadata: Metadata = {
   title: 'Contato Inteligente',
@@ -17,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={`${volkhov.className} bg-background-color text-font-color`}>{children}</body>
     </html>
   )
 }

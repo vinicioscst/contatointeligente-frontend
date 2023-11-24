@@ -1,15 +1,12 @@
-import Footer from '@/components/Footer'
-import LeftColumn from '@/components/LeftColumn'
-import RightColumn from '@/components/RightColumn'
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      <main className='flex flex-wrap'>
-        <LeftColumn />
-        <RightColumn />
-      </main>
+      <Header />
+      <main className="flex"></main>
       <Footer />
     </>
-  )
+  );
 }

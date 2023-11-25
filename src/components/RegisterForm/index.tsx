@@ -1,22 +1,19 @@
 "use client";
-import { abrilFatface } from "@/app/layout";
 import { useState } from "react";
 import Input from "../Input";
+import Button from "../Button";
+import Link from "next/link";
 
-interface IRegisterFormProps {
-  setTab: (value: "login" | "register") => void;
-}
+function RegisterForm() {
+  interface IRegisterFormData {
+    fullName?: string;
+    email?: string;
+    telephone?: string;
+    password?: string;
+    isAdmin?: boolean;
+    avatar?: string | ArrayBuffer | null;
+  }
 
-interface IRegisterFormData {
-  fullName?: string;
-  email?: string;
-  telephone?: string;
-  password?: string;
-  isAdmin?: boolean;
-  avatar?: string | ArrayBuffer | null;
-}
-
-function RegisterForm({ setTab }: IRegisterFormProps) {
   const [formData, setFormData] = useState<IRegisterFormData | null>();
 
   function handleData(e: React.ChangeEvent<HTMLInputElement>) {
@@ -36,11 +33,14 @@ function RegisterForm({ setTab }: IRegisterFormProps) {
     reader.readAsDataURL(file);
   }
 
+  function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+  }
+
   return (
-    <div>
-      {formData?.avatar && <img src={formData?.avatar as string} alt="" />}
-      <h2 className={`${abrilFatface.className} text-2xl`}>Cadastre-se</h2>
-      <form>
+    <div className="w-full max-w-5xl flex flex-col gap-8 py-20 px-4">
+      <h2 className='text-center sm:text-left text-2xl'>Cadastre-se</h2>
+      <form className="flex flex-col gap-4" onSubmit={(e) => submit(e)}>
         <Input
           handleData={handleData}
           type="text"
@@ -76,16 +76,13 @@ function RegisterForm({ setTab }: IRegisterFormProps) {
           id="login_avatar"
           label="Foto de perfil"
         />
-        <button type="submit">Fazer login</button>
+        <Button bgColor="bg-accent-color" textColor="text-background-color" type="submit">Cadastre-se</Button>
       </form>
-      <p>
+      <p className="text-center sm:text-left">
         Já possui conta?{" "}
-        <span
-          className="font-bold underline cursor-pointer"
-          onClick={() => setTab("login")}
-        >
+        <Link href={"/login"}><span className="font-bold underline cursor-pointer">
           Faça login
-        </span>
+        </span></Link>
       </p>
     </div>
   );

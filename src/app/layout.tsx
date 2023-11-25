@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${volkhov.className} bg-background-color text-font-color`}>{children}</body>
+      <body className={`${volkhov.className} bg-background-color text-font-color scroll-smooth`}>{children}</body>
     </html>
   )
 }

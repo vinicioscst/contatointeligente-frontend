@@ -1,11 +1,12 @@
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import HomeBanner from "@/components/HomeBanner";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="flex"></main>
+      <main className="flex">
+        <HomeBanner />
+      </main>
       <Footer />
     </>
   );

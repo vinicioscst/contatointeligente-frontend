@@ -18,7 +18,7 @@ const Header = () => {
         </Link>
         <Nav />
         <div className="flex sm:hidden py-3" onClick={() => setOpen(!open)}>
-          <MenuIcon size="21" stroke="rgb(245 247 249)"/>
+          <MenuIcon size={21} stroke="rgb(245 247 249)"/>
         </div>
       </div>
       {open === true && <MobileNav />}

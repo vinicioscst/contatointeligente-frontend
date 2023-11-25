@@ -8,7 +8,7 @@ const HomeBanner = () => {
         <div className="bg-secondary-color/30 rounded-md border border-accent-color/30 p-2 mb-12">
             <p>✨ Novas funcionalidades em breve...</p>
         </div>
-        <h1 className="text-4xl leading-tight max-w-3xl ">
+        <h1 className="text-3xl sm:text-4xl leading-tight max-w-3xl ">
           A melhor forma de <span className="text-accent-color">organizar</span> seus contatos
         </h1>
         <p className="text-xl underline underline-offset-8">

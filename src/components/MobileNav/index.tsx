@@ -25,7 +25,7 @@ const MobileNav = () => {
             type="button"
             hasImage={true}
           >
-            <LoginIcon stroke="#090d10" size="21" />
+            <LoginIcon stroke="#090d10" size={21} />
             Faça seu login
           </Button>
         </Link>

@@ -1,6 +1,6 @@
 interface IMenuIconProps {
   stroke: string;
-  size: string;
+  size: number;
 }
 
 const MenuIcon = ({ stroke, size }: IMenuIconProps) => {

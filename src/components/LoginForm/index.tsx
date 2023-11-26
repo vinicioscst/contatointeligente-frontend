@@ -1,68 +1,80 @@
 "use client";
-import { useState } from "react";
 import Button from "../Button";
-import Input from "../Input";
 import { api } from "@/config/axios";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { TUserLogin, userLoginSchema } from "@/schemas/user";
+import { inter } from "@/app/layout";
 
-interface IRegisterFormProps {
-  setTab: (value: "login" | "register") => void;
-}
+function LoginForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TUserLogin>({ resolver: zodResolver(userLoginSchema) });
 
-interface ILoginFormData {
-  email?: string;
-  password?: string;
-}
-
-function LoginForm({ setTab }: IRegisterFormProps) {
-  const [formData, setFormData] = useState<ILoginFormData | null>();
-
-  function handleData(e: React.ChangeEvent<HTMLInputElement>) {
-    const data = { ...formData, [e.target.name]: e.target.value };
-    setFormData(data);
-  }
-
-  function submit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-  }
+  const submit = (formData: TUserLogin) => {};
 
   return (
     <div className="w-full max-w-5xl flex flex-col gap-8 py-20 px-4">
-      <h2 className='text-center sm:text-left text-2xl'>
+      <h2 className="text-center sm:text-left text-2xl">
         Faça login em sua conta
       </h2>
-      <form className="flex flex-col gap-4" onSubmit={(e) => submit(e)}>
-        <Input
-          handleData={handleData}
-          type="email"
-          name="email"
-          id="login_email"
-          label="Email"
-        />
-        <Input
-          handleData={handleData}
-          type="tel"
-          name="telephone"
-          id="login_telephone"
-          label="Telefone"
-        />
-        <Input
-          handleData={handleData}
-          type="password"
-          name="password"
-          id="login_password"
-          label="Senha"
-        />
-        <Button bgColor="bg-accent-color" textColor="text-background-color" type="submit">Fazer Login</Button>
+      <form
+        className="flex flex-col gap-4"
+        onSubmit={handleSubmit(submit)}
+        noValidate
+      >
+        <div>
+          <label htmlFor="login_email">Email</label>
+          <input
+            type="email"
+            id="login_email"
+            className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+            {...register("email")}
+          />
+          {errors.email && (
+            <span
+              className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+            >
+              {errors.email.message}
+            </span>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="login_password">Senha</label>
+          <input
+            type="password"
+            id="login_password"
+            className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+            {...register("password")}
+          />
+          {errors.password && (
+            <span
+              className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+            >
+              {errors.password.message}
+            </span>
+          )}
+        </div>
+        <Button
+          bgColor="bg-accent-color"
+          textColor="text-background-color"
+          type="submit"
+        >
+          Fazer Login
+        </Button>
       </form>
 
       <p>
         Ainda não possui conta?{" "}
-        <span
-          className="font-bold underline cursor-pointer"
-          onClick={() => setTab("register")}
-        >
-          Registre-se aqui
-        </span>
+        <Link href={"/register"}>
+          <span className="font-bold underline cursor-pointer">
+            Registre-se aqui
+          </span>
+        </Link>
       </p>
     </div>
   );

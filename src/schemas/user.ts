@@ -10,7 +10,7 @@ export const userRegisterSchema = z.object({
     .string()
     .email({ message: "Um email válido é obrigatório." })
     .max(45, "O campo deve conter, no máximo, 45 caracteres."),
-  telephone: z.string().min(1, "O número é obrigatório.").min(11, "O campo deve conter 11 caracteres. Exemplo: (11) 90000-0000").max(11, "O campo deve conter 11 caracteres. Exemplo: (11) 90000-0000"),
+  telephone: z.string().min(1, "O número é obrigatório.").min(2, "O campo deve conter 11 caracteres. Exemplo: (11) 90000-0000").max(16),
   password: z
     .string()
     .min(1, "A senha é obrigatória.")

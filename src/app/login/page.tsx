@@ -3,7 +3,7 @@ import { Metadata, ResolvingMetadata } from "next";
 
 export function generateMetadata(parent: ResolvingMetadata): Metadata {
   return {
-    title: "Login | Contato",
+    title: "Login | Contato Inteligente",
   };
 }
 

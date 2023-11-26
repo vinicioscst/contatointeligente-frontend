@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Volkhov, Inter } from "next/font/google";
+import { Volkhov } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import "react-toastify/dist/ReactToastify.min.css";
 import { ToastContainer } from "react-toastify";
 
-export const inter = Inter({ subsets: ["latin"] });
 const volkhov = Volkhov({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {

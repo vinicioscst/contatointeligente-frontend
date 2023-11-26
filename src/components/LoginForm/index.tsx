@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TUserLogin, userLoginSchema } from "@/schemas/user";
-import { inter } from "@/app/layout";
 
 function LoginForm() {
   const {
@@ -31,12 +30,12 @@ function LoginForm() {
           <input
             type="email"
             id="login_email"
-            className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+            className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
             {...register("email")}
           />
           {errors.email && (
             <span
-              className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+              className={`text-sm font-inter text-red-500 tracking-wider`}
             >
               {errors.email.message}
             </span>
@@ -48,12 +47,12 @@ function LoginForm() {
           <input
             type="password"
             id="login_password"
-            className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+            className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
             {...register("password")}
           />
           {errors.password && (
             <span
-              className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+              className={`text-sm font-inter text-red-500 tracking-wider`}
             >
               {errors.password.message}
             </span>

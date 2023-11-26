@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TUserRegister, userRegisterSchema } from "@/schemas/user";
-import { inter } from "@/app/layout";
 import { useState } from "react";
 
 function RegisterForm() {
@@ -57,12 +56,12 @@ function RegisterForm() {
             <input
               type="text"
               id="login_fullName"
-              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
               {...register("fullName")}
             />
             {errors.fullName && (
               <span
-                className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+                className={`text-sm font-inter text-red-500 tracking-wider`}
               >
                 {errors.fullName.message}
               </span>
@@ -74,12 +73,12 @@ function RegisterForm() {
             <input
               type="email"
               id="login_email"
-              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
               {...register("email")}
             />
             {errors.email && (
               <span
-                className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+                className={`text-sm font-inter text-red-500 tracking-wider`}
               >
                 {errors.email.message}
               </span>
@@ -91,14 +90,14 @@ function RegisterForm() {
             <input
               type="tel"
               id="login_telephone"
-              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
               value={tel}
               {...register("telephone")}
               onChange={maskTelephone}
             />
             {errors.telephone && (
               <span
-                className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+                className={`text-sm font-inter text-red-500 tracking-wider`}
               >
                 {errors.telephone.message}
               </span>
@@ -110,12 +109,12 @@ function RegisterForm() {
             <input
               type="password"
               id="login_password"
-              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
               {...register("password")}
             />
             {errors.password && (
               <span
-                className={`text-sm text-red-500 tracking-wider ${inter.className}`}
+                className={`text-sm font-inter text-red-500 tracking-wider`}
               >
                 {errors.password.message}
               </span>
@@ -127,10 +126,12 @@ function RegisterForm() {
             <input
               type="text"
               id="login_avatar"
-              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md ${inter.className} text-sm placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
+              className={`w-full px-3 py-3 bg-white border border-slate-300 rounded-md text-sm font-inter placeholder-slate-400 focus:border-primary-color focus:ring-1 focus:ring-primary-color shadow-sm shadow-slate-300`}
               {...register("avatar")}
             />
-            <span className={`text-sm tracking-wider text-primary-color ${inter.className}`}>
+            <span
+              className={`text-sm font-inter tracking-wider text-primary-color`}
+            >
               Você pode hospedar sua foto de perfil em sites como o{" "}
               <a href="https://imgur.com" className="underline">
                 Imgur

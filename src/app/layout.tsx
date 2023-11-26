@@ -22,7 +22,6 @@ export default function RootLayout({
       <body
         className={`${volkhov.className} bg-background-color text-font-color scroll-smooth`}
       >
-        <Header />
         {children}
         <ToastContainer position="top-right" />
       </body>

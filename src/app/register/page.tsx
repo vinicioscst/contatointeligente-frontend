@@ -1,3 +1,6 @@
+import Header from "@/components/Header";
+import MobileNav from "@/components/MobileNav";
+import Nav from "@/components/Nav";
 import RegisterForm from "@/components/RegisterForm";
 import { Metadata, ResolvingMetadata } from "next";
 
@@ -9,8 +12,11 @@ export function generateMetadata(parent: ResolvingMetadata): Metadata {
 
 export default function Register() {
   return (
-    <main className="flex justify-center">
-      <RegisterForm />
-    </main>
+    <>
+      <Header desktopMenu={<Nav />} mobileMenu={<MobileNav />} />
+      <main className="flex justify-center">
+        <RegisterForm />
+      </main>
+    </>
   );
 }

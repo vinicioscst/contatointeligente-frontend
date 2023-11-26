@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 export const inter = Inter({ subsets: ["latin"] });
 const volkhov = Volkhov({ subsets: ["latin"], weight: ["400", "700"] });
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Contato Inteligente",
   description: "Todos os seus contatos organizados em um único lugar",
 };

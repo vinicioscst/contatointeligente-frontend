@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import MobileNav from "../MobileNav";
 import MenuIcon from "../icons/MenuIcon";
 
 interface IHeaderProps {

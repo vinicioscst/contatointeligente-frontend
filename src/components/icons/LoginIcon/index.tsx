@@ -13,10 +13,10 @@ const LoginIcon = ({stroke, size}: ILoginIconProps) => {
     >
       <g
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         stroke={stroke}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         transform="translate(3 3)"
       >
         <path d="m6.5 10.5 3-3-3-3" />

@@ -13,10 +13,10 @@ const MenuIcon = ({ stroke, size }: IMenuIconProps) => {
     >
       <g
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         stroke={stroke}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path d="m4.5 6.5h12" />
         <path d="m4.498 10.5h11.997" />

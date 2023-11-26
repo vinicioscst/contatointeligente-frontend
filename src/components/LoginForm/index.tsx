@@ -5,15 +5,38 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TUserLogin, userLoginSchema } from "@/schemas/user";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { TLoginReturn } from "@/types/login";
+import { stringify } from "querystring";
 
 function LoginForm() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TUserLogin>({ resolver: zodResolver(userLoginSchema) });
 
-  const submit = (formData: TUserLogin) => {};
+  const submit = async (formData: TUserLogin) => {
+    await api
+      .post("login", formData)
+      .then((res) => {
+        const response: TLoginReturn = res.data
+        toast.success("Login realizado com sucesso!");
+        
+        localStorage.setItem("CI@TOKEN", response.token)
+        localStorage.setItem("CI@USER", JSON.stringify(response.user))
+
+        setTimeout(() => {
+          router.push("/dashboard");
+        }, 2000);
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
+  };
 
   return (
     <div className="w-full max-w-5xl flex flex-col gap-8 py-20 px-4">

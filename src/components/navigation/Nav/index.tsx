@@ -1,20 +1,19 @@
 "use client";
 import Link from "next/link";
-import Button from "../Button";
-import Image from "next/image";
-import LoginIcon from "../icons/LoginIcon";
+import Button from "../../Button";
+import LoginIcon from "../../icons/LoginIcon";
 
-const MobileNav = () => {
+const Nav = () => {
   return (
-    <div className="p-4 block sm:hidden text-background-color">
-      <nav className="flex flex-col items-center gap-6">
+    <div className="hidden sm:block">
+      <nav className="flex items-center gap-6">
         <Link href={"#about-us"}>
-          <li className="hover:text-accent-color cursor-pointer transition-colors">
+          <li className="hover:underline hover:text-background-color/80 underline-offset-4 cursor-pointer transition-all">
             Sobre nós
           </li>
         </Link>
         <Link href={"/register"}>
-          <li className="hover:text-accent-color cursor-pointer transition-colors">
+          <li className="hover:hover:underline hover:text-background-color/80 underline-offset-4 cursor-pointer transition-all">
             Cadastro
           </li>
         </Link>
@@ -34,4 +33,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export default Nav;

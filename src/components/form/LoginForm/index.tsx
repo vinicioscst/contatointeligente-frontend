@@ -1,5 +1,5 @@
 "use client";
-import Button from "../Button";
+import Button from "../../Button";
 import { api } from "@/config/axios";
 import Link from "next/link";
 import { useForm } from "react-hook-form";

@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import HomeBanner from "@/components/HomeBanner";
-import MobileNav from "@/components/MobileNav";
-import Nav from "@/components/Nav";
+import HomeBanner from "@/components/home/HomeBanner";
+import MobileNav from "@/components/navigation/MobileNav";
+import Nav from "@/components/navigation/Nav";
 
 export default function Home() {
   return (

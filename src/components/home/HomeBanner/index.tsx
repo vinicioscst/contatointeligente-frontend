@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "../Button";
+import Button from "../../Button";
 
 const HomeBanner = () => {
   return (
@@ -14,8 +14,8 @@ const HomeBanner = () => {
         <p className="text-xl underline underline-offset-8">
           Crie e gerencie seus contatos de forma prática e intuitiva
         </p>
-        <Link href={"#how-it-works"}>
-          <Button bgColor="bg-primary-color" textColor="text-background-color" type="button">Como funciona?</Button>
+        <Link href={"/register"}>
+          <Button bgColor="bg-primary-color" textColor="text-background-color" type="button">Primeiros passos</Button>
         </Link>
       </div>
     </section>

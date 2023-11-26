@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
-import MobileNav from "@/components/MobileNav";
-import Nav from "@/components/Nav";
-import RegisterForm from "@/components/RegisterForm";
+import MobileNav from "@/components/navigation/MobileNav";
+import Nav from "@/components/navigation/Nav";
+import RegisterForm from "@/components/form/RegisterForm";
 import { Metadata, ResolvingMetadata } from "next";
 
 export function generateMetadata(parent: ResolvingMetadata): Metadata {

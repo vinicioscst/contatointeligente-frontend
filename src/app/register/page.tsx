@@ -3,6 +3,7 @@ import MobileNav from "@/components/navigation/MobileNav";
 import Nav from "@/components/navigation/Nav";
 import RegisterForm from "@/components/form/RegisterForm";
 import { Metadata, ResolvingMetadata } from "next";
+import Footer from "@/components/Footer";
 
 export function generateMetadata(parent: ResolvingMetadata): Metadata {
   return {
@@ -12,7 +13,7 @@ export function generateMetadata(parent: ResolvingMetadata): Metadata {
 
 export default function Register() {
   return (
-    <>
+    <div className="flex flex-col justify-between">
       <Header
         desktopMenu={<Nav />}
         mobileMenu={<MobileNav />}
@@ -21,6 +22,7 @@ export default function Register() {
       <main className="flex justify-center">
         <RegisterForm />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }

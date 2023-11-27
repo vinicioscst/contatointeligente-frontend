@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import LoginForm from "@/components/form/LoginForm";
 import MobileNav from "@/components/navigation/MobileNav";
@@ -12,7 +13,7 @@ export function generateMetadata(parent: ResolvingMetadata): Metadata {
 
 export default function Login() {
   return (
-    <>
+    <div className="flex flex-col justify-between min-h-[100dvh]">
       <Header
         desktopMenu={<Nav />}
         mobileMenu={<MobileNav />}
@@ -21,6 +22,7 @@ export default function Login() {
       <main className="flex justify-center">
         <LoginForm />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }

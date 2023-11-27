@@ -8,12 +8,12 @@ const MobileNav = () => {
     <div className="p-4 block sm:hidden text-background-color">
       <nav className="flex flex-col items-center gap-6">
         <Link href={"#about-us"}>
-          <li className="hover:text-accent-color cursor-pointer transition-colors">
+          <li className="hover:underline hover:text-background-color/80 font-inter font-bold underline-offset-4 cursor-pointer transition-all">
             Sobre nós
           </li>
         </Link>
         <Link href={"/register"}>
-          <li className="hover:text-accent-color cursor-pointer transition-colors">
+          <li className="hover:underline hover:text-background-color/80 font-inter font-bold underline-offset-4 cursor-pointer transition-all">
             Cadastro
           </li>
         </Link>

@@ -8,7 +8,7 @@ import { TUserLogin, userLoginSchema } from "@/schemas/user";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { TLoginReturn } from "@/types/login";
-import { stringify } from "querystring";
+import Cookies from "js-cookie"
 
 function LoginForm() {
   const router = useRouter();
@@ -26,7 +26,7 @@ function LoginForm() {
         const response: TLoginReturn = res.data
         toast.success("Login realizado com sucesso!");
         
-        localStorage.setItem("CI@TOKEN", response.token)
+        Cookies.set('auth_token', response.token)
         localStorage.setItem("CI@USER", JSON.stringify(response.user))
 
         setTimeout(() => {

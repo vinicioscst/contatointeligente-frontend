@@ -143,6 +143,7 @@ function RegisterForm() {
             bgColor="bg-accent-color"
             textColor="text-background-color"
             type="submit"
+            borderColor="outline-transparent"
           >
             Cadastre-se
           </Button>

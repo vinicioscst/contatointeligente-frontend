@@ -15,7 +15,7 @@ const HomeBanner = () => {
           Crie e gerencie seus contatos de forma prática e intuitiva
         </p>
         <Link href={"/register"}>
-          <Button bgColor="bg-primary-color" textColor="text-background-color" type="button">Primeiros passos</Button>
+          <Button bgColor="bg-primary-color" textColor="text-background-color" type="button" borderColor="outline-transparent">Primeiros passos</Button>
         </Link>
       </div>
     </section>

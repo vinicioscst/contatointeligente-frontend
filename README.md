@@ -20,7 +20,7 @@ Instala as dependências do projeto
 npm run dev
 ```
 
-Roda a aplicação, por padrão funcionando no endereço `*http://localhost:3333*`
+Roda a aplicação, por padrão funcionando no endereço `*http://localhost:3000*`
 
 > [!IMPORTANT]  
 > Para a aplicação funcionar perfeitamente, lembre-se de também utilizar a sua [**API**](https://github.com/Kenzie-Academy-Brasil-Developers/m6-entrega01-desafiofullstack-backend-vinicios).

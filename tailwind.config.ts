@@ -32,6 +32,9 @@ const config: Config = {
         "font-color": "#090d10",
         "background-color": "#f5f7f9",
       },
+      screens: {
+        'xm': '425px',
+      }
     },
   },
   plugins: [],

@@ -10,6 +10,16 @@ export type TUserLoginReturn = {
   deletedAt: string | null | undefined;
 };
 
+export type TUserContact = {
+  id: string;
+  fullName: string;
+  email: string;
+  telephone: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt?: string | null | undefined;
+};
+
 export type TLoginReturn = {
   user: TUserLoginReturn;
   token: string;

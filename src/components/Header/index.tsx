@@ -24,7 +24,7 @@ const Header = ({ desktopMenu, mobileMenu }: IHeaderProps) => {
           <MenuIcon size={21} stroke="rgb(245 247 249)" />
         </div>
       </div>
-      {open === true && `${mobileMenu}`}
+      {open === true && mobileMenu}
     </header>
   );
 };

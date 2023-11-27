@@ -28,6 +28,7 @@ function LoginForm() {
         
         Cookies.set('auth_token', response.token)
         localStorage.setItem("CI@USER", JSON.stringify(response.user))
+        localStorage.setItem("CI@TOKEN", JSON.stringify(response.token))
 
         setTimeout(() => {
           router.push("/dashboard");

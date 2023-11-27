@@ -7,7 +7,7 @@ import Nav from "@/components/navigation/Nav";
 export default function Home() {
   return (
     <>
-      <Header desktopMenu={<Nav />} mobileMenu={<MobileNav />} />
+      <Header desktopMenu={<Nav />} mobileMenu={<MobileNav />} sendToHome={false}/>
       <main className="flex">
         <HomeBanner />
       </main>

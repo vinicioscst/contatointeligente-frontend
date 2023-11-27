@@ -13,7 +13,11 @@ export function generateMetadata(parent: ResolvingMetadata): Metadata {
 export default function Login() {
   return (
     <>
-      <Header desktopMenu={<Nav />} mobileMenu={<MobileNav />} />
+      <Header
+        desktopMenu={<Nav />}
+        mobileMenu={<MobileNav />}
+        sendToHome={true}
+      />
       <main className="flex justify-center">
         <LoginForm />
       </main>

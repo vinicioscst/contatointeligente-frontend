@@ -1,43 +1,20 @@
 "use client";
 import Button from "../../Button";
-import { api } from "@/config/axios";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TUserLogin, userLoginSchema } from "@/schemas/user";
-import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
-import { TLoginReturn } from "@/types/login";
-import Cookies from "js-cookie"
+import { useContext } from "react";
+import { UserContext } from "@/contexts/UserContext/UserContext";
 
 function LoginForm() {
-  const router = useRouter();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TUserLogin>({ resolver: zodResolver(userLoginSchema) });
 
-  const submit = async (formData: TUserLogin) => {
-    await api
-      .post("login", formData)
-      .then((res) => {
-        const response: TLoginReturn = res.data
-        toast.success("Login realizado com sucesso!");
-        
-        Cookies.set('auth_token', response.token)
-        localStorage.setItem("CI@USER", JSON.stringify(response.user))
-        localStorage.setItem("CI@TOKEN", JSON.stringify(response.token))
-
-        setTimeout(() => {
-          router.push("/dashboard");
-        }, 2000);
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-      });
-  };
+  const { loginUser } = useContext(UserContext);
 
   return (
     <div className="w-full max-w-5xl flex flex-col gap-8 py-20 px-4">
@@ -46,7 +23,7 @@ function LoginForm() {
       </h2>
       <form
         className="flex flex-col gap-4"
-        onSubmit={handleSubmit(submit)}
+        onSubmit={handleSubmit(loginUser)}
         noValidate
       >
         <div>

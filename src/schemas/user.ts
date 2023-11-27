@@ -32,6 +32,8 @@ export const userRegisterSchema = z.object({
   avatar: z.string().nullish().optional(),
 });
 
+export const editUserSchema = userRegisterSchema.partial()
+
 export const userLoginSchema = z.object({
     email: z
     .string()
@@ -43,3 +45,4 @@ export const userLoginSchema = z.object({
 
 export type TUserRegister = z.infer<typeof userRegisterSchema>;
 export type TUserLogin = z.infer<typeof userLoginSchema>;
+export type TUserEdit = z.infer<typeof editUserSchema>;

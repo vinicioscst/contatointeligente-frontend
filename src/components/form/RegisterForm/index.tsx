@@ -1,16 +1,13 @@
 "use client";
 import Button from "../../Button";
 import Link from "next/link";
-import { api } from "@/config/axios";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TUserRegister, userRegisterSchema } from "@/schemas/user";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "@/contexts/UserContext/UserContext";
 
 function RegisterForm() {
-  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -28,19 +25,7 @@ function RegisterForm() {
     setTel(value);
   }
 
-  const submit = async (formData: TUserRegister) => {
-    await api
-      .post("users", formData)
-      .then(() => {
-        toast.success("Conta criada com sucesso!");
-        setTimeout(() => {
-          router.push("/login");
-        }, 2000);
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-      });
-  };
+  const { createUser } = useContext(UserContext);
 
   return (
     <>
@@ -48,7 +33,7 @@ function RegisterForm() {
         <h2 className="text-center sm:text-left text-2xl">Cadastre-se</h2>
         <form
           className="flex flex-col gap-4"
-          onSubmit={handleSubmit(submit)}
+          onSubmit={handleSubmit(createUser)}
           noValidate
         >
           <div>

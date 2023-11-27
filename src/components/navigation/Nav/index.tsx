@@ -13,7 +13,7 @@ const Nav = () => {
           </li>
         </Link>
         <Link href={"/register"}>
-          <li className="hover:hover:underline hover:text-background-color/80 underline-offset-4 cursor-pointer transition-all">
+          <li className="hover:underline hover:text-background-color/80 underline-offset-4 cursor-pointer transition-all">
             Cadastro
           </li>
         </Link>
@@ -23,6 +23,7 @@ const Nav = () => {
             textColor="text-font-color"
             type="button"
             hasImage={true}
+            borderColor="outline-transparent"
           >
             <LoginIcon stroke="#090d10" size={21} />
             Faça seu login

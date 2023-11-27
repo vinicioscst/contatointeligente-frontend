@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Button from "../../Button";
-import Image from "next/image";
 import LoginIcon from "../../icons/LoginIcon";
 
 const MobileNav = () => {
@@ -24,6 +23,7 @@ const MobileNav = () => {
             textColor="text-font-color"
             type="button"
             hasImage={true}
+            borderColor="outline-transparent"
           >
             <LoginIcon stroke="#090d10" size={21} />
             Faça seu login
